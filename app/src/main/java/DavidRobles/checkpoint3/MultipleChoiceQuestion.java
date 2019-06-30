@@ -17,7 +17,7 @@ public class MultipleChoiceQuestion extends Question
     @Override
     public boolean checkAnswer(int userAnswer)
     {
-        return (String.valueOf(mAnswer).equals(userAnswer));
+        return (mAnswer == userAnswer);
     }
 
     @Override
@@ -31,6 +31,7 @@ public class MultipleChoiceQuestion extends Question
     {
         System.out.println("1)" + mOptions[0] + " 2)" + mOptions[1] + " 3)" + mOptions[2]);
         String in = input.nextLine();
+        int inresult = Integer.parseInt(in);
         boolean boolResponse;
 
 //        if(mOptions[0].equals("pizza") && in.equals(3))
@@ -43,8 +44,8 @@ public class MultipleChoiceQuestion extends Question
 //        }
 //        System.out.println(mAnswer);
 //        System.out.println(boolResponse);
-        System.out.println(in + " " + mAnswer);
-        return checkAnswer(in);
+        //System.out.println(inresult + " " + mAnswer);
+        return checkAnswer(inresult);
 
     }
 }
